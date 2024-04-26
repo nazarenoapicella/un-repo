@@ -1,10 +1,11 @@
 #include <stdio.h>
+#include <math.h>
 
 int main() {
     float numero1, numero2, resultado;
     char operacion;
 
-    printf("Ingrese la operacion (+, -, *, /, ^): ");
+    printf("Ingrese la operacion (+, -, *, /, ^, r): ");
     scanf(" %c", &operacion);
 
     printf("Ingrese el numero 1: ");
@@ -15,25 +16,35 @@ int main() {
     if (operacion == '+') {
         resultado = numero1 + numero2;
         printf("El resultado es: %g\n", resultado);
-    } else if (operacion == '-') {
+    }
+    else if (operacion == '-') {
         resultado = numero1 - numero2;
         printf("El resultado es: %g\n", resultado);
-    } else if (operacion == '*') {
+    }
+    else if (operacion == '*') {
         resultado = numero1 * numero2;
         printf("El resultado es: %g\n", resultado);
-    } else if (operacion == '/') {
+    }
+    else if (operacion == '/') {
         resultado = numero1 / numero2;
         printf("El resultado es: %g\n", resultado);
-    } else if (operacion == '^') {
+    }
+    else if (operacion == '^') {
         resultado = 1;
         for (int i = 0; i < numero2; i++) {
             resultado *= numero1;
         }
         printf("El resultado es: %g\n", resultado);
-    } else {
+    }
+    else if (operacion == 'r') {
+        resultado = sqrt(numero1);
+        printf("El resultado es: %g\n", resultado);
+    }
+    else {
         printf("Operacion no valida.\n");
         return 1;
     }
 
     return 0;
 }
+
